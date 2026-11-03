@@ -1,0 +1,125 @@
+@import 'tailwindcss';
+
+:root {
+  color-scheme: dark;
+  --bg: #071426;
+  --bg-soft: #0d1b2a;
+  --card: rgba(15, 23, 42, 0.8);
+  --red: #d71920;
+  --blue: #1769ff;
+  --text: #f8fafc;
+  --muted: #cbd5e1;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(23, 105, 255, 0.18), transparent 30%),
+    radial-gradient(circle at right, rgba(215, 25, 32, 0.12), transparent 28%),
+    #020b13;
+  color: var(--text);
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -8px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--red), var(--blue));
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  transform: scaleX(1);
+}
+
+.section-shell {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.glass-panel {
+  background: rgba(15, 23, 42, 0.72);
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.hero-overlay {
+  background: linear-gradient(90deg, rgba(2, 6, 23, 0.82), rgba(2, 6, 23, 0.52));
+}
+
+.car-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(15, 23, 42, 0.75);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 26px 40px rgba(15, 23, 42, 0.38);
+  border-color: rgba(255,255,255,0.14);
+}
+
+.gradient-ring {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(215, 25, 32, 0.12), rgba(23, 105, 255, 0.12));
+}
+
+.gallery-item {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background-size: cover;
+  background-position: center;
+  min-height: 240px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.gallery-item:hover {
+  transform: scale(1.02);
+  box-shadow: 0 24px 40px rgba(0,0,0,0.28);
+}
+
+.text-shadow {
+  text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+  .section-shell {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
